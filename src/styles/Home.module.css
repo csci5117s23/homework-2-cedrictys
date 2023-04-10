@@ -1,0 +1,19 @@
+@font-face {
+  font-family: Unica-one;
+  src: url("https://fonts.googleapis.com/css2?family=Unica+One&display=swap");
+}
+
+.main {
+  font-family: "Unica One";
+  color: white;
+  display: block;
+  /* align-items: center; */
+  justify-content: center;
+  text-align: center;
+  font-size: 120px;
+  height: 100%;
+}
+
+.login {
+  padding: 20px;
+}
