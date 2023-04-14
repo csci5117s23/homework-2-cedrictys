@@ -1,7 +1,7 @@
 import Head from "next/head"
 import Link from "next/link"
 import styles from '@/styles/Home.module.css'
-
+import { ClerkProvider, SignUp, SignIn, SignedOut, SignedIn, UserProfile, UserButton} from '@clerk/clerk-react';
 
 export default function Home() {
   return (
@@ -10,13 +10,22 @@ export default function Home() {
         <title>Login page</title>
       </Head>
       <main className={styles.main}>
-        <br></br>
-        Welcome to the to-do list,
-        <br></br>
-        personalize for you.
-        <br></br>
-        <button className={styles.login}><Link href="/todo">Login to the app</Link></button>
-      </main>
+      <SignedIn
+        afterSignInUrl="/todo"
+
+        >
+        
+        
+        </SignedIn>
+        <SignedOut>
+          <SignIn
+            afterSignInUrl="/todo"
+          />
+        </SignedOut>
+        </main>
     </>
   )
 }
+
+
+

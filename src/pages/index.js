@@ -1,6 +1,7 @@
 import Head from "next/head"
 import Link from "next/link"
 import styles from '@/styles/Home.module.css'
+import { ClerkProvider, SignUp, SignIn, SignedOut, SignedIn, UserButton } from '@clerk/nextjs'
 
 
 export default function Home() {
@@ -15,7 +16,12 @@ export default function Home() {
         <br></br>
         personalize for you.
         <br></br>
-        <button className={styles.login}><Link href="/login">Login to the app</Link></button>
+        <SignedIn>
+          <button className={styles.login}><Link href="/todo">Go to the Todo page</Link></button>
+        </SignedIn>
+        <SignedOut>
+          <button className={styles.login}><Link href="/login">Login to the app</Link></button>
+        </SignedOut>
       </main>
     </>
   )

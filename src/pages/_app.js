@@ -1,17 +1,17 @@
 import '@/styles/globals.css'
-import Image from "next/image"
+import Head from "next/head"
+import { ClerkProvider, SignUp, SignIn, SignedOut, SignedIn, UserButton } from '@clerk/nextjs'
+
 
 export default function App({ Component, pageProps }) {
   return (
-    <>
-      <Image
-        src="/logo.png"
-        alt="logo"
-        width={800}
-        height={100}
-      />
-        
-      <Component {...pageProps} />
-    </>
+    <ClerkProvider {...pageProps} >
+      <Head>
+        <link rel="icon" href="/icon.png" />
+      </Head>
+        <img src="/logo.png"></img>
+      
+        <Component {...pageProps} />
+    </ClerkProvider>
   )
 }

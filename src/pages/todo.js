@@ -12,6 +12,7 @@ export default function Home() {
             <main className={styles.main}>
                 <div>
                     <h1>To-do List</h1>
+                    <a>help here</a>
                 </div>
             </main>
         </>
