@@ -9,8 +9,9 @@
   display: block;
   justify-content: center;
   text-align: center;
-  font-size: 120px;
+  font-size: 100px;
   height: 100%;
+  padding: 10% 5%  0% 5%; 
 }
 
 .login {
@@ -24,7 +25,33 @@
 
 .button {
   font-size: 80px;
-  padding: 20px;
+  padding: 10px 20px 10px 20px;
   border-radius: 10px;
   border-color: white;
+  text-decoration: none;
+}
+
+.todoMain {
+  padding-top: 10%;
+  text-align: center;
+}
+
+.addButton {
+  border-radius: 5px;
+  padding: 5px;
+  margin: 20px;
+  width: 20%;
+  font-size: 30px;
+  text-decoration: none;
+}
+
+.takingNote {
+  width: 80%;
+  height: 100px;
+  border-radius: 5px;
+}
+
+.takingTitle {
+  width: 80%;
+  border-radius: 5px;
 }
