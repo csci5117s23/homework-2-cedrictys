@@ -17,10 +17,10 @@ export default function Home() {
         personalize for you.
         <br></br>
         <SignedIn>
-          <button className={styles.login}><Link href="/todo">Go to the Todo page</Link></button>
+          <button className={styles.button}><Link href="/todo">To-do</Link></button>
         </SignedIn>
         <SignedOut>
-          <button className={styles.login}><Link href="/login">Login to the app</Link></button>
+          <button className={styles.button}><Link href="/login">Login</Link></button>
         </SignedOut>
       </main>
     </>

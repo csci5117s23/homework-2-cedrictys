@@ -1,9 +1,33 @@
 @import url("https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css");
+@font-face {
+  font-family: Unica-one;
+  src: url("https://fonts.googleapis.com/css2?family=Unica+One&display=swap");
+}
 
 html {
+  font-family: "Unica One";
   background-color: #262626;
 }
 
-img {
-  height:50px;
+.center {
+  margin: 0;
+  position: absolute;
+  top: 5%;
+  left: 95%;
+}
+
+.icon {
+  width: 30px;
+  padding-right: 10px;
+}
+
+.logopart {
+  margin: 0;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  font-size: 30px;
+  color: white;
+  display: flex;
+  vertical-align: middle;
 }
