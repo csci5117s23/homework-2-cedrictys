@@ -33,7 +33,7 @@ export default function Home() {
   }, [isLoaded]);
 
   // get item
-  const [todoItems, setTodoItems] = useState(null);
+  const [todoItems, setTodoItems] = useState([]);
   const fetchData = async (token) => {
     const response = await fetch(API_ENDPOINT + "/todo", {
       method: 'GET',
@@ -82,17 +82,17 @@ export default function Home() {
 
   }
 
-  if (loading) {
-    return (
-    <>
-    <main className={styles.todoMain}>
-      <div className={styles.todoList}>
-        <h1>Loading ...</h1>
-      </div>
-    </main>
-    </>
-    )
-  } else {
+  // if (loading) {
+  //   return (
+  //   <>
+  //   <main className={styles.todoMain}>
+  //     <div className={styles.todoList}>
+  //       <h1>Loading ...</h1>
+  //     </div>
+  //   </main>
+  //   </>
+  //   )
+  // } else {
     const todoListsItem = todoItems.map((item) => (
       <div>
         <Todo 
@@ -130,7 +130,7 @@ export default function Home() {
       <br></br>
       <div className={styles.todoList}>
         <h1>Your-todo list</h1>
-        <div>{todoLists}</div>
+        <div className={styles.todoListItem}>{todoListsItem}</div>
       </div>
     </main>
     </SignedIn>
@@ -148,5 +148,5 @@ export default function Home() {
     </>
     )
   }
-}
+// }
   

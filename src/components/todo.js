@@ -1,15 +1,16 @@
 import Link from "next/link";
-import { useAuth  } from "@clerk/nextjs";
+import { useAuth } from "@clerk/nextjs";
 
 
-export default function Todo({id, title, content, date, done, fetchData}) {
+export default function Todo({id, title, content, date, done, fetchData, userid}) {
 
   // api endpoint
   const API_ENDPOINT = process.env.NEXT_PUBLIC_API_ENDPOINT;
-  const { getToken } = useAuth();
+  const { getToken, userId } = useAuth();
 
   // todo done
   const itemDone = async (e) => {
+    e.preventDefault();
     const token = await getToken({ template: "codehooks" });
     const response = await fetch(API_ENDPOINT + "/todo" + "/" + id, {
       method: 'PATCH',
@@ -17,10 +18,8 @@ export default function Todo({id, title, content, date, done, fetchData}) {
         "Content-Type": "application/json",
         "Authorization": "Bearer " + token,
       },
-      body: JSON.stringify({_id:id, title: title, content:content, date:date, done:true})
+      body: JSON.stringify({_id:id, title: title, content:content, date:date, done:true, userid:userId})
     });
-
-    const data = await response.json()
     fetchData(token);
   }
 
@@ -40,10 +39,9 @@ export default function Todo({id, title, content, date, done, fetchData}) {
   return (
     <>
     <div key={id}>
-      <h2>{title}</h2>
-      <p>{content}</p>
-      <button onClick={itemDelete}>Delete</button>
-
+      <Link href="/todo/${id}"><h2>{title}</h2></Link>
+      <button onClick={itemDelete} className={styles.addButton}>Delete</button>
+      <button onClick={itemDone} className={styles.addButton}>Done</button>
     </div>
     </>
   )
