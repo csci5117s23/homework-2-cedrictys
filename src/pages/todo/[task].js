@@ -32,6 +32,7 @@ export default function Task() {
 
   // get item
   const [todoItems, setTodoItems] = useState([]);
+  const [data, setData] = useState({});
   const fetchData = async (token) => {
     const response = await fetch(API_ENDPOINT + "/todo", {
       method: 'GET',
@@ -107,7 +108,7 @@ export default function Task() {
     setShowDiv(prevShowDiv => !prevShowDiv)
   }
   
-  if(rounter?.isFallback) {
+  if(router?.isFallback) {
     return (
         <>
         <main className={styles.todoMain}>
