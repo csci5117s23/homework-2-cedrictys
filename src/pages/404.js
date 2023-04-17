@@ -1,16 +1,19 @@
 import Link from "next/link";
+import styles from '@/styles/Home.module.css'
+import { SignedOut, SignedIn} from '@clerk/nextjs'
 
 export default function Custom404() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>404 - Page Not Found</h1>
-      <p>Oooooops The page you are looking for does not exist.</p>
-      <Link
-        href={"/todos"}
-        className="text-center bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-      >
-        Check todos
-      </Link>
+    <main className={styles.main404}>
+      <h2 style={{marginBottom: '0'}}>404</h2>
+      <h4 style={{marginTop: '0', margin: '0'}}>Not Found</h4>
+      <p>The requested URL could not be found on this server.</p>
+      <SignedIn>
+        <button className={styles.button}><Link href="/todo" style={{ textDecoration: 'none', color: 'black' }}>To-do</Link></button>
+      </SignedIn>
+      <SignedOut>
+        <button className={styles.button}><Link href="/login" style={{ textDecoration: 'none', color: 'black' }}>Login</Link></button>
+      </SignedOut>
     </main>
   );
 }

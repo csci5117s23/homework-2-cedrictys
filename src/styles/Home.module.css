@@ -49,9 +49,23 @@
   width: 80%;
   height: 100px;
   border-radius: 5px;
+  padding: 20px;
 }
 
 .takingTitle {
   width: 80%;
   border-radius: 5px;
+  padding: 20px;
+}
+
+.main404 {
+  padding-top: 10%;
+  text-align: center;
+  color: white;
+  font-size: 50px;
+}
+
+.todoList {
+  color: white;
+  font-size: 30px;
 }
