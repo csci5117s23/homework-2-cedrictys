@@ -9,7 +9,7 @@ export default function Custom404() {
       <h4 style={{marginTop: '0', margin: '0'}}>Not Found</h4>
       <p>The requested URL could not be found on this server.</p>
       <SignedIn>
-        <button className={styles.button}><Link href="/todo" style={{ textDecoration: 'none', color: 'black' }}>To-do</Link></button>
+        <button className={styles.button}><Link href="/todos" style={{ textDecoration: 'none', color: 'black' }}>To-do</Link></button>
       </SignedIn>
       <SignedOut>
         <button className={styles.button}><Link href="/login" style={{ textDecoration: 'none', color: 'black' }}>Login</Link></button>

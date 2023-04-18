@@ -16,7 +16,7 @@ export default function Home() {
         personalize for you.
         <br></br>
         <SignedIn>
-          <button className={styles.button}><Link href="/todo" style={{ textDecoration: 'none', color: 'black' }}>To-do</Link></button>
+          <button className={styles.button}><Link href="/todos" style={{ textDecoration: 'none', color: 'black' }}>To-do</Link></button>
         </SignedIn>
         <SignedOut>
           <button className={styles.button}><Link href="/login" style={{ textDecoration: 'none', color: 'black' }}>Login</Link></button>
